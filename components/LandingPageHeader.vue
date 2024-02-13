@@ -30,10 +30,10 @@ const myGlobalObject = useMyGlobalObject();
 
 const computedWindowWidth = computed(() => myGlobalObject.windowWidth.value);
 
-watch(myGlobalObject.windowWidth, () => {
-  console.log(myGlobalObject.windowWidth.value)
-  console.log(computedWindowWidth.value)
-})
+// watch(myGlobalObject.windowWidth, () => {
+//   console.log(myGlobalObject.windowWidth.value)
+//   console.log(computedWindowWidth.value)
+// })
 
 </script>
 
