@@ -1,0 +1,42 @@
+@import "./header";
+@import "./main_section";
+
+.blackwell-bg-color {
+    background-color: #0077b5;
+}
+
+.blackwell-intro-bg-color {
+    background-color: #172949;
+}
+
+// Trading Tango text blue C2E5F7
+// Collect all rewards Text orange E8903D
+// Gift card background blue 1C446A
+
+//arrow
+.w3c-arrow {
+    border: solid orange;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.w3c-right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.w3c-left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.w3c-up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.w3c-down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
