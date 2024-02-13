@@ -1,7 +1,7 @@
 <template>
   <div>
     <NuxtLayout>
-      <LandingPageHeader #header :window-width="windowWidth.valueOf()"/>
+      <LandingPageHeader #header :window-width="windowWidth.valueOf()" />
       <NuxtPage />
       <LandingPageFooter #footer />
     </NuxtLayout>
@@ -14,15 +14,15 @@ import { useMyGlobalObject } from '~/composables/myglobalobject';
 import { type MyCustomGlobalObject } from './types/types';
 
 const windowWidth: Ref<Number> = ref(640);
-const myGlobalObject:MyCustomGlobalObject = useMyGlobalObject();
-  
+const myGlobalObject: MyCustomGlobalObject = useMyGlobalObject();
+
 if (process.browser) {
   // screenWidth.value = screen.width;
   windowWidth.value = window.innerWidth;
   const handleResize = () => {
     windowWidth.value = window.innerWidth;
     myGlobalObject.setWindowWidth(window.innerWidth);
-   //console.log(myGlobalObject.windowWidth.value);
+    //console.log(myGlobalObject.windowWidth.value);
   }
 
   onMounted(() => {
@@ -32,7 +32,5 @@ if (process.browser) {
   onUnmounted(() => {
     window.removeEventListener('resize', handleResize)
   })
-
 }
-
 </script>

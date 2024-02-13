@@ -1,27 +1,27 @@
 <template>
   <div class="flex flex-col text-white w-[300px] sm:w-[200px] md:w-[300px]">
-      <div class="flex flex-row w-full">
-          <div class="grow CountDown-numeral text-2xl sm:text-lg md:text-2xl flex justify-center">{{ days }}</div>
-          <div class="text-2xl sm:text-lg md:text-2xl flex justify-center">:</div>
-          <div class="grow CountDown-numeral text-2xl sm:text-lg md:text-2xl flex justify-center">{{ hours }}</div>
-          <div class="text-2xl sm:text-lg md:text-2xl flex justify-center">:</div>
-          <div class="grow CountDown-numeral text-2xl sm:text-lg md:text-2xl flex justify-center">{{ minutes }}</div>
-          <div class="text-2xl sm:text-lg md:text-2xl flex justify-center">:</div>
-          <div class="grow CountDown-numeral text-2xl sm:text-lg md:text-2xl flex justify-center">{{ seconds }}</div>
-      </div>
-      <div class="flex flex-row w-full">
-          <div class="grow flex justify-center"> Days </div>
-          <div> &nbsp </div>
-          <div class="grow flex justify-center"> Hours </div>
-          <div> &nbsp </div>
-          <div class="grow flex justify-center"> Minutes </div>
-          <div> &nbsp </div>
-          <div class="grow flex justify-center"> Seconds </div>
-      </div>
+    <div class="flex flex-row w-full">
+      <div class="grow CountDown-numeral text-2xl sm:text-lg md:text-2xl flex justify-center">{{ days }}</div>
+      <div class="text-2xl sm:text-lg md:text-2xl flex justify-center">:</div>
+      <div class="grow CountDown-numeral text-2xl sm:text-lg md:text-2xl flex justify-center">{{ hours }}</div>
+      <div class="text-2xl sm:text-lg md:text-2xl flex justify-center">:</div>
+      <div class="grow CountDown-numeral text-2xl sm:text-lg md:text-2xl flex justify-center">{{ minutes }}</div>
+      <div class="text-2xl sm:text-lg md:text-2xl flex justify-center">:</div>
+      <div class="grow CountDown-numeral text-2xl sm:text-lg md:text-2xl flex justify-center">{{ seconds }}</div>
+    </div>
+    <div class="flex flex-row w-full">
+      <div class="grow flex justify-center"> Days </div>
+      <div> &nbsp </div>
+      <div class="grow flex justify-center"> Hours </div>
+      <div> &nbsp </div>
+      <div class="grow flex justify-center"> Minutes </div>
+      <div> &nbsp </div>
+      <div class="grow flex justify-center"> Seconds </div>
+    </div>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .CountDown-numeral {
   font-family: 'Times New Roman', Times, serif;
 }
@@ -32,8 +32,8 @@ import { ref } from 'vue';
 // Props
 const props = defineProps({
   lastDay: {
-      type: String,
-      default: 'December 30, 3000 23:59:59'
+    type: String,
+    default: 'December 30, 3000 23:59:59'
   }
 })
 
@@ -58,8 +58,8 @@ let timerId: NodeJS.Timeout;
 // Lifcycle
 onMounted(() => {
   timerId = setInterval(() => {
-      countDown();
-      //console.log("CountDown: Timer is running...");
+    countDown();
+    //console.log("CountDown: Timer is running...");
   }, 1000);
 })
 

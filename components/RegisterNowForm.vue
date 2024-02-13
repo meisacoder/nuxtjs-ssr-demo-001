@@ -118,7 +118,7 @@ const submitForm = async () => {
             class="bg-stone-300 transition-all duration-100 hover:bg-stone-100 text-black px-6 py-2 mt-4">
             Submit
           </button>
-<!--           <p class="text-red-500">Error:</p>
+          <!--           <p class="text-red-500">Error:</p>
           <span class="text-left" v-for="error in v$.$errors" :key="error.$uid">
             {{ error.$property }} - {{ error.$message }}
           </span> -->

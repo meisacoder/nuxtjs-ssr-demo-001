@@ -1,17 +1,15 @@
 // variables
-
 $dandy: #7ad9ff;
 $blackwell-light-bg: #0077b5;
 $blackwell-dark-bg: #172949;
 
-// mixins
+// // mixins
+// @mixin k-border {
+//   border: 1px solid lightgray;
+//   border-radius: 4px;
+// }
 
-@mixin k-border {
-  border: 1px solid lightgray;
-  border-radius: 4px;
-}
-
-@mixin k-border-debug {
-  border: 1px dotted red;
-  border-radius: 4px;
-}
+// @mixin k-border-debug {
+//   border: 1px dotted red;
+//   border-radius: 4px;
+// }

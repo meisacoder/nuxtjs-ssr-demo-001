@@ -28,9 +28,9 @@ const logout = () => {
 
 const myGlobalObject = useMyGlobalObject();
 
-const computedWindowWidth = computed(()=> myGlobalObject.windowWidth.value);
+const computedWindowWidth = computed(() => myGlobalObject.windowWidth.value);
 
-watch(myGlobalObject.windowWidth, ()=> {
+watch(myGlobalObject.windowWidth, () => {
   console.log(myGlobalObject.windowWidth.value)
   console.log(computedWindowWidth.value)
 })
@@ -87,6 +87,8 @@ watch(myGlobalObject.windowWidth, ()=> {
   </nav>
 </template>
 
-<style scoped>.dropdown:hover .dropdown-menu {
+<style lang="scss" scoped >
+.dropdown:hover .dropdown-menu {
   display: block;
-}</style>
+}
+</style>

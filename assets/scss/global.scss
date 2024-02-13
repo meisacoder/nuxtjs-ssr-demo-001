@@ -10,11 +10,7 @@
     background-color: $blackwell-dark-bg;
 }
 
-// Trading Tango text blue C2E5F7
-// Collect all rewards Text orange E8903D
-// Gift card background blue 1C446A
-
-//arrow
+// Arrow
 .w3c-arrow {
     border: solid orange;
     border-width: 0 3px 3px 0;
@@ -42,12 +38,12 @@
     -webkit-transform: rotate(45deg);
 }
 
-.k-border {
-    @include k-border;
-}
+// .k-border {
+//     @include k-border;
+// }
 
-.k-border-debug {
-    @include k-border-debug;
+// .k-border-debug {
+//     @include k-border-debug;
 
-    background-color: $dandy;
-}
+//     background-color: $dandy;
+// }
