@@ -4,5 +4,16 @@ export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss'
-  ]
+  ],
+
+  css: ["@/assets/scss/global.scss"],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/scss/_vars.scss" as *;',
+        },
+      },
+    },
+  },
 })

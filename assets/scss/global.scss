@@ -1,12 +1,13 @@
+@use "vars";
 @import "./header";
 @import "./main_section";
 
 .blackwell-bg-color {
-    background-color: #0077b5;
+    background-color: $blackwell-light-bg;
 }
 
 .blackwell-intro-bg-color {
-    background-color: #172949;
+    background-color: $blackwell-dark-bg;
 }
 
 // Trading Tango text blue C2E5F7
@@ -39,4 +40,14 @@
 .w3c-down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+}
+
+.k-border {
+    @include k-border;
+}
+
+.k-border-debug {
+    @include k-border-debug;
+
+    background-color: $dandy;
 }
