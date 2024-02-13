@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="title">
+    <div class="title lg:container mx-auto flex w-full flex-wrap items-center justify-between px-3">
       <h2>Login</h2>
     </div>
     <div class="container form">
