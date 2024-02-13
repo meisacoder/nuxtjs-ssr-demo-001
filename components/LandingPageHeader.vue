@@ -45,7 +45,7 @@ watch(myGlobalObject.windowWidth, () => {
     <!-- Here add a container -->
     <div class="lg:container mx-auto flex w-full flex-wrap items-center justify-between px-3">
       <img src="~/assets/images/logo-white.png" class="w-[100px]" />
-      <div class="ml-10" v-if="computedWindowWidth.valueOf() >= 640">
+      <div class="flex flex-row items-center justify-center ml-10" v-if="computedWindowWidth.valueOf() >= 640">
         <div class="text-center text-white">
           <p>PROMOTION</p>
           <p>ENDS IN</p>
