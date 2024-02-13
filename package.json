@@ -22,6 +22,8 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.11.4",
     "@pinia/nuxt": "^0.5.1",
+    "mongoose": "^8.1.2",
+    "mongoose-bcrypt": "^1.11.0",
     "pinia": "^2.1.7",
     "sass": "^1.70.0"
   }
