@@ -1,14 +1,14 @@
 @use "vars";
-@import "./header";
-@import "./main";
-@import "./icons";
+@use "header";
+@use "main";
+@use "icons";
 
 .blackwell-bg-color {
-    background-color: $blackwell-light-bg;
+    background-color: vars.$blackwell-light-bg;
 }
 
 .blackwell-intro-bg-color {
-    background-color: $blackwell-dark-bg;
+    background-color: vars.$blackwell-dark-bg;
 }
 
 // .k-border {
