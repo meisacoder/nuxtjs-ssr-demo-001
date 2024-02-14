@@ -40,28 +40,31 @@ const submitForm = async () => {
   const result = await v$.value.$validate();
   if (result) {
     alert("success, form submitted!");
-    // // useFetch from nuxt 3
-    // const { data, pending }: any = await useFetch(
-    //   "https://dummyjson.com/auth/login",
-    //   {
-    //     method: "post",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: {
-    //       firstName: formData.firstName,
-    //       lastName: formData.lastName,
-    //       email: formData.email,
-    //       countryPhoneNumberPrefix: formData.countryPhoneNumberPrefix,
-    //       phoneNumber: formData.phoneNumber,
-    //       passwordHash: { required, minLength: minLength(10) },
-    //       metMinAge: { required },
-    //       agreedToTermsAndConditions: { required }
-    //     },
-    //   }
-    // );
+    const runtimeConfig = useRuntimeConfig();
+    const API_BASE: string = <string>runtimeConfig.public.apiBase;
+    const REGISTRATION_URL: string = API_BASE + "users";
+    // useFetch from nuxt 3
+    const { data, pending }: any = await useFetch(
+      REGISTRATION_URL,
+      {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          password: formData.password,
+          countryPhoneNumberPrefix: formData.countryPhoneNumberPrefix,
+          phoneNumber: formData.phoneNumber,
+          metMinAge: formData.metMinAge,
+          agreedToTermsAndConditions: formData.agreedToTermsAndConditions
+        },
+      }
+    );
+    if (data.value) {
+      const token = useCookie("token"); // useCookie new hook in nuxt 3
+    }
 
-    // if (data.value) {
-    //   const token = useCookie("token"); // useCookie new hook in nuxt 3
-    // }
   } else {
     console.log(result);
     alert("error, form not submitted!");

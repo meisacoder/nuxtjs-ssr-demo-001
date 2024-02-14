@@ -37,7 +37,7 @@ export default defineEventHandler(async (event) => {
       email: user.email,
       countryPhoneNumberPrefix: user.countryPhoneNumberPrefix,
       phoneNumber: user.phoneNumber,
-      password: user.password,
+ //     password: user.password,
       metMinAge: user.metMinAge,
       agreedToTermsAndConditions: user.agreedToTermsAndConditions,
     }));
@@ -47,6 +47,7 @@ export default defineEventHandler(async (event) => {
     return {
       code: "ERROR",
       message: "Something went wrong.",
+      status: "failure"
     };
   }
 });

@@ -1,12 +1,26 @@
 import { users } from "../../dbModels";
 interface IRequestBody {
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
-  name: string;
+  countryPhoneNumberPrefix: number;
+  phoneNumber: number;
+  metMinAge: string;
+  agreedToTermsAndConditions: string;
 }
 export default defineEventHandler(async (event) => {
   console.log("POST /api/users");
-  const { email, password, name } = await readBody<IRequestBody>(event);
+  const {
+    firstName,
+    lastName,
+    email,
+    password,
+    countryPhoneNumberPrefix,
+    phoneNumber,
+    metMinAge,
+    agreedToTermsAndConditions,
+  } = await readBody<IRequestBody>(event);
   try {
     const userData = await users.findOne({
       email,
@@ -17,17 +31,25 @@ export default defineEventHandler(async (event) => {
       return {
         code: "USER_EXISTS",
         message: "User with given email already exists.",
+        status: "failure",
       };
     } else {
       console.log("Create user");
       const newUserData = await users.create({
+        firstName,
+        lastName,
         email,
         password,
-        name,
+        countryPhoneNumberPrefix,
+        phoneNumber,
+        metMinAge,
+        agreedToTermsAndConditions,
       });
       return {
         id: newUserData._id,
         name: newUserData.firstName,
+        email: newUserData.email,
+        status: "failure",
       };
     }
   } catch (err) {
@@ -36,6 +58,7 @@ export default defineEventHandler(async (event) => {
     return {
       code: "ERROR",
       message: "Something wrong.",
+      status: "failure"
     };
   }
 });

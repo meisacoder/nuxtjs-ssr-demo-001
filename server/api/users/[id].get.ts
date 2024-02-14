@@ -12,7 +12,15 @@ export default defineEventHandler(async (event) => {
       console.log("User found");
       return {
         id: userData._id,
-        name: userData.firstName,
+        firstName: userData.firstName,
+        lastName: userData.lastName,
+        email: userData.email,
+        countryPhoneNumberPrefix: userData.countryPhoneNumberPrefix,
+        phoneNumber: userData.phoneNumber,
+   //     password: userData.password,
+        metMinAge: userData.metMinAge,
+        agreedToTermsAndConditions: userData.agreedToTermsAndConditions,
+        status: "success"
       };
     } else {
       console.log("User not found");
@@ -20,6 +28,7 @@ export default defineEventHandler(async (event) => {
       return {
         code: "USER_NOT_FOUND",
         message: `User with id ${userId} doesn't exists.`,
+        status: "failure"
       };
     }
   } catch (err) {
@@ -28,6 +37,7 @@ export default defineEventHandler(async (event) => {
     return {
       code: "ERROR",
       message: "Something went wrong.",
+      status: "failure"
     };
   }
 });
