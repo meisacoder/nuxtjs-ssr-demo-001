@@ -3,11 +3,22 @@
 </script>
 
 <template>
-  <div class="blackwell-intro-bg-color">
-    <p class="text-white">Hello</p>
+  <div class="blackwell-dark-bg-color">
+    <div class="lg:container mx-auto flex w-full flex-wrap items-center justify-between px-3">
+      <HeroBanner />
+    </div>
   </div>
-  <div class="blackwell-bg-color">
-    <RegisterNowForm />
+  <div class="blackwell-light-bg-color">
+    <div class="lg:container mx-auto flex w-full flex-wrap items-center justify-center px-3"> <!-- not j-betw-->
+      <RegisterNowForm />
+    </div>
+  </div>
+  <div class="blackwell-light-bg-color">
+    <div class="lg:container mx-auto flex w-full flex-wrap items-center justify-center px-3">
+      <div>
+      <Carousel class="w-[400px] h-[400px]"/>
+      </div>
+    </div>
   </div>
 </template>
 

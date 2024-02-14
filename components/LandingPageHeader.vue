@@ -62,7 +62,7 @@ const computedWindowWidth = computed(() => myGlobalObject.windowWidth.value);
 <template>
   <!-- Navbar -->
   <nav
-    class="flex-no-wrap relative flex w-full items-center justify-between bg-neutral-100 py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4">
+    class="blackwell-dark-bg-color flex-no-wrap relative flex w-full items-center justify-between bg-neutral-100 py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4">
 
     <!-- Here add a container -->
     <div class="lg:container mx-auto flex w-full flex-wrap items-center justify-between px-3">
@@ -75,7 +75,7 @@ const computedWindowWidth = computed(() => myGlobalObject.windowWidth.value);
         <CountDownTimer />
       </div>
       <div class="ml-auto flex flex-row items-center">
-        <NavBarButton buttonText="REGISTER" class="mr-1"/>
+        <OrangeButton buttonText="REGISTER" class="mr-1"/>
         <div class="dropdown inline-block relative">
           <button class="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
             <span class="m-auto">

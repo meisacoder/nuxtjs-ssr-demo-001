@@ -3,12 +3,20 @@
 @use "main";
 @use "icons";
 
-.blackwell-bg-color {
+.blackwell-light-bg-color {
     background-color: vars.$blackwell-light-bg;
 }
 
-.blackwell-intro-bg-color {
+.blackwell-dark-bg-color {
     background-color: vars.$blackwell-dark-bg;
+}
+
+.blackwell-red-button-bg {
+    background-color: vars.$blackwell-red;
+}
+
+.blackwell-blue-button-bg {
+    background-color: vars.$blackwell-dark-blue;
 }
 
 // .k-border {

@@ -74,7 +74,7 @@ const submitForm = async () => {
 </script>
 
 <template>
-  <div class="lg:container mx-auto flex w-full flex-wrap items-center justify-center px-3"> <!-- not j-betw-->
+
     <div class="flex items-center justify-center">
       <div class="text-center text-white p-6 w-full "> <!-- sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] -->
         <h1 class="text-2xl mb-3">Register Now</h1>
@@ -146,6 +146,10 @@ const submitForm = async () => {
             class="bg-stone-300 transition-all duration-100 hover:bg-stone-100 text-black px-6 py-2 mt-4">
             Submit
           </button>
+          <div class="flex flex-row items-center">
+            <ThirdPartySignUpButton button-text="Sign-up using FaceBook" class="blackwell-red-button-bg w-full h-full mt-2 mr-1 mb-2"/>
+            <ThirdPartySignUpButton button-text="Sign-up using Google" class="blackwell-blue-button-bg w-full h-full mt-2 ml-1 mb-2" />
+          </div>
           <!--           <p class="text-red-500">Error:</p>
           <span class="text-left" v-for="error in v$.$errors" :key="error.$uid">
             {{ error.$property }} - {{ error.$message }}
@@ -153,7 +157,7 @@ const submitForm = async () => {
         </form>
       </div>
     </div>
-  </div>
+
 </template>
 
 <style scoped>
