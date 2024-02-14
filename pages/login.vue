@@ -33,6 +33,7 @@ const login = async () => {
   await authenticateUser(user.value); // call authenticateUser and pass the user object
   // redirect to homepage if user is authenticated
   if (authenticated) {
+    console.log(authenticated);
     router.push('/');
   }
 };

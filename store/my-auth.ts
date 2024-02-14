@@ -5,6 +5,8 @@ interface UserPayloadInterface {
   password: string;
 }
 
+// const { $locally } = useNuxtApp();
+
 export const useAuthStore = defineStore("auth", {
   state: () => ({
     authenticated: false,
@@ -25,15 +27,16 @@ export const useAuthStore = defineStore("auth", {
         },
       });
       this.loading = pending;
-
-      if (data.value) {
+      if (data.value.status === "success") {
         const token = useCookie("token"); // useCookie new hook in nuxt 3
         token.value = data?.value?.token; // set token to cookie
+        useCookie("authenticated").value = "true"
         this.authenticated = true; // set authenticated  state value to true
       }
     },
     logUserOut() {
       const token = useCookie("token"); // useCookie new hook in nuxt 3
+      useCookie("authenticated").value = "false";
       this.authenticated = false; // set authenticated  state value to false
       token.value = null; // clear the token cookie
     },

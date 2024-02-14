@@ -12,6 +12,7 @@ export default defineEventHandler(async (event) => {
     return {
       code: "EMAIL_REQUIRED",
       message: "Body malformed: email is required.",
+      status: "failure"
     };
   }
   // Check if password is passed.
@@ -20,6 +21,7 @@ export default defineEventHandler(async (event) => {
     return {
       code: "PASSWORD_REQUIRED",
       message: "Body malformed: password is required.",
+      status: "failure"
     };
   }
   try {
@@ -38,6 +40,7 @@ export default defineEventHandler(async (event) => {
         return {
           id: userData._id,
           name: userData.firstName,
+          status: "success"
         };
       } else {
         console.log("Password is not valid");
@@ -45,6 +48,7 @@ export default defineEventHandler(async (event) => {
         return {
           code: "USER_NOT_FOUND",
           message: "User with given email and password doesn't exists.",
+          status: "failure"
         };
       }
     } else {
@@ -53,6 +57,7 @@ export default defineEventHandler(async (event) => {
       return {
         code: "USER_NOT_FOUND",
         message: "User with given email and password doesn't exists.",
+        status: "failure"
       };
     }
   } catch (err) {
@@ -61,6 +66,7 @@ export default defineEventHandler(async (event) => {
     return {
       code: "ERROR",
       message: "Something wrong.",
+      status: "failure"
     };
   }
 });
