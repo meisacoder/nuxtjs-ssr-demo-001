@@ -4,11 +4,11 @@
       <h2>Login</h2>
     </div>
     <div class="container form">
-      <label for="uname"><b>Username</b></label>
-      <input v-model="user.username" type="text" class="input" placeholder="Enter Username" name="uname" required />
+      <label for="uname"><b>Email</b></label>
+      <input v-model="user.email" type="email" class="input" placeholder="Email" name="email" required />
 
       <label for="psw"><b>Password</b></label>
-      <input v-model="user.password" type="password" class="input" placeholder="Enter Password" name="psw" required />
+      <input v-model="user.password" type="password" class="input" placeholder="Password" name="psw" required />
 
       <button @click.prevent="login" class="button">Login</button>
     </div>
@@ -24,8 +24,8 @@ const { authenticateUser } = useAuthStore(); // use authenticateUser action from
 const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive with storeToRefs
 
 const user = ref({
-  username: 'kminchelle',
-  password: '0lelplR',
+  email: 'new@email.com',
+  password: 'asdfsadfsdfdas',
 });
 const router = useRouter();
 

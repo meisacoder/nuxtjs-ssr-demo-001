@@ -28,4 +28,4 @@ const schema = new mongoose.Schema(
   { timestamps: true, strict: true, strictQuery: true }
 );
 schema.plugin(bcrypt);
-export default mongoose.model<IUser>("User", schema, "users"); //name schema collection
+export default mongoose.model<IUser>("users", schema); 

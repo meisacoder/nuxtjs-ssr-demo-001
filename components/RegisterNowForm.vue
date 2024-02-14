@@ -2,6 +2,7 @@
 import useVuelidate from '@vuelidate/core';
 import { required, minLength, email, sameAs } from '@vuelidate/validators';
 
+// Form
 const formData = reactive({
   firstName: "",
   lastName: "",
@@ -14,6 +15,7 @@ const formData = reactive({
   agreedToTermsAndConditions: ""
 })
 
+// Vuelidate
 const rules = computed(() => {
   return {
     firstName: { required },
@@ -33,10 +35,33 @@ const v$ = useVuelidate(rules, formData);
 //   console.log(formData.firstName);
 // })
 
+// Form submission
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (result) {
     alert("success, form submitted!");
+    // // useFetch from nuxt 3
+    // const { data, pending }: any = await useFetch(
+    //   "https://dummyjson.com/auth/login",
+    //   {
+    //     method: "post",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: {
+    //       firstName: formData.firstName,
+    //       lastName: formData.lastName,
+    //       email: formData.email,
+    //       countryPhoneNumberPrefix: formData.countryPhoneNumberPrefix,
+    //       phoneNumber: formData.phoneNumber,
+    //       passwordHash: { required, minLength: minLength(10) },
+    //       metMinAge: { required },
+    //       agreedToTermsAndConditions: { required }
+    //     },
+    //   }
+    // );
+
+    // if (data.value) {
+    //   const token = useCookie("token"); // useCookie new hook in nuxt 3
+    // }
   } else {
     console.log(result);
     alert("error, form not submitted!");

@@ -1,9 +1,7 @@
-import { useRoute } from "vue-router";
 import { users } from "../../dbModels";
 
 export default defineEventHandler(async (event) => {
-  const route = useRoute();
-  const userId = route.params.id;
+  const userId = event.context?.params?.id;
   console.log(`GET /api/users/${userId}`);
   try {
     console.log("Find user");
@@ -18,7 +16,7 @@ export default defineEventHandler(async (event) => {
       };
     } else {
       console.log("User not found");
-      event.res.statusCode = 404;
+      event.node.res.statusCode = 404;
       return {
         code: "USER_NOT_FOUND",
         message: `User with id ${userId} doesn't exists.`,
@@ -26,7 +24,7 @@ export default defineEventHandler(async (event) => {
     }
   } catch (err) {
     console.dir(err);
-    event.res.statusCode = 500;
+    event.node.res.statusCode = 500;
     return {
       code: "ERROR",
       message: "Something went wrong.",

@@ -33,6 +33,8 @@ export default defineEventHandler(async (event) => {
       const isPasswordValid = await userData.verifyPasswordSync(password);
       if (isPasswordValid) {
         // Generate token or create session here
+
+
         return {
           id: userData._id,
           name: userData.firstName,
