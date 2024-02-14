@@ -72,7 +72,7 @@ const computedWindowWidth = computed(() => myGlobalObject.windowWidth.value);
           <p>PROMOTION</p>
           <p>ENDS IN</p>
         </div>
-        <CountDownTimer />
+        <CountDownTimer last-day="December 30, 2024 23:59:59"/>
       </div>
       <div class="ml-auto flex flex-row items-center">
         <OrangeButton buttonText="REGISTER" class="mr-1"/>
