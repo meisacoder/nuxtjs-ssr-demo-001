@@ -1,8 +1,8 @@
-## Setup Dev
+# Setup Dev
 
 Make sure to install the dependencies:
 
-# npm
+### npm
 npm install
 
 npx nuxi build
@@ -11,18 +11,18 @@ npm run dev
 
 Starts the development server on `http://localhost:3000`
 
-## Production
+# Production
 
 Build the application for production:
 
-# npm
+### npm
 npm run build
 
-## mongoDB
+# mongoDB
 
 Create mongoDb:
 
-# Create DB
+### Create DB
 docker-compose up
 
 db.createUser({user: 'bwDbAdmin', pwd:"password", roles: [{role: "readWrite", db: "blackwell"}]})
