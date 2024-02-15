@@ -1,5 +1,5 @@
 <template>
-	<div class="bg-cover bi-center w-[340px] h-[273px] " :id=stepBgId.toString()> <!-- sm:w-[113px] sm:h-[91px] md:w-[226px] md:h-[182px] xl:w-[340px] xl:h-[273px] -->
+	<div class="bg-cover w-[340px] h-[273px] " :id=stepBgId.toString()> <!-- sm:w-[113px] sm:h-[91px] md:w-[226px] md:h-[182px] xl:w-[340px] xl:h-[273px] -->
 	          <div class="text-white pt-[100px] px-10 sm:text-sm">{{props.descriptionText}}</div>
 	</div>
 </template>
