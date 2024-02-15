@@ -28,7 +28,7 @@ export default defineEventHandler(async (event) => {
       return {
         code: "USER_NOT_FOUND",
         message: `User with id ${userId} doesn't exists.`,
-        status: "failure"
+        status: "error"
       };
     }
   } catch (err) {
@@ -37,7 +37,7 @@ export default defineEventHandler(async (event) => {
     return {
       code: "ERROR",
       message: "Something went wrong.",
-      status: "failure"
+      status: "error"
     };
   }
 });

@@ -49,13 +49,13 @@ const computedWindowWidth = computed(() => myGlobalObject.windowWidth.value);
   <div class="blackwell-dark-bg-color step-bg-img py-10 bg-center">
     <div class="lg:container mx-auto flex w-full flex-wrap items-center justify-center px-3"> <!-- not j-betw-->
       <div class="flex flex-col md:flex-row items-center justify-center">
-        <Step class="" :step="1" ,
+        <Step class="" :step="1"
           description-text="Create an account with Blackwell Global & log in to the Client Portal." />
         <div v-if="computedWindowWidth.valueOf() >= 640"><i class="w3c-arrow w3c-right w-[15px] h-[15px]"></i></div>
         <div v-else><i class="w3c-arrow w3c-down w-[15px] h-[15px]"></i></div>
         <Step :step="2"
           description-text='Under the "Promotion" tab, copy your unique referral link & send it to your referee, or get your referee to scan your unique QR code to create an account with us.' />
-          <div v-if="computedWindowWidth.valueOf() >= 640"><i class="w3c-arrow w3c-right w-[15px] h-[15px]"></i></div>
+        <div v-if="computedWindowWidth.valueOf() >= 640"><i class="w3c-arrow w3c-right w-[15px] h-[15px]"></i></div>
         <div v-else><i class="w3c-arrow w3c-down w-[15px] h-[15px]"></i></div>
         <Step :step="3"
           description-text="Monitor your referees in the Referral Activity section to track whether you've fulfilled the requirements for various rewards!" />

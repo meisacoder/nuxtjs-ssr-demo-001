@@ -12,8 +12,8 @@
 import { ref } from 'vue';
 import { useMyGlobalObject } from '~/composables/myglobalobject';
 import { type MyCustomGlobalObject } from './types/types';
-// import { storeToRefs } from 'pinia'; // import storeToRefs helper hook from pinia
-// import { useAuthStore } from '~/store/my-auth'; // import the auth store we just created
+import { storeToRefs } from 'pinia';
+import { useAuthStore } from '~/store/my-auth';
 
 const windowWidth: Ref<Number> = ref(640);
 const myGlobalObject: MyCustomGlobalObject = useMyGlobalObject();
@@ -24,14 +24,20 @@ if (process.browser) {
   const handleResize = () => {
     windowWidth.value = window.innerWidth;
     myGlobalObject.setWindowWidth(window.innerWidth);
-    //console.log(myGlobalObject.windowWidth.value);
   }
 
   onMounted(() => {
     window.addEventListener('resize', handleResize)
     windowWidth.value = window.innerWidth;
     myGlobalObject.setWindowWidth(window.innerWidth);
-    //console.log(useCookie("authenticated").value);
+    const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive
+    const token = useCookie("token"); // get token from cookies
+    if (token.value) {
+      console.log("app.vue::" + token.value); // check if value exists
+      authenticated.value = true; // update the state to authenticated
+    } else {
+      console.log("app.vue::no token seen" + token.value || "null");
+    }
   })
 
   onUnmounted(() => {

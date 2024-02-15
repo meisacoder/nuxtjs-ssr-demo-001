@@ -7,7 +7,10 @@ export default defineNuxtRouteMiddleware((to) => {
 
   if (token.value) {
     // check if value exists
+    console.log(token.value);
     authenticated.value = true; // update the state to authenticated
+  } else {
+    console.log("my-auth-middlewar::no token seen" + token.value);
   }
 
   // if token exists and url is /login redirect to homepage
@@ -16,8 +19,8 @@ export default defineNuxtRouteMiddleware((to) => {
   }
 
   // if token doesn't exist redirect to log in
-  if (!token.value && to?.name !== "login") {
-    abortNavigation();
-    return navigateTo("/login");
-  }
+  // if (!token.value && to?.name !== "login") {
+  //   abortNavigation();
+  //   return navigateTo("/login");
+  // }
 });

@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
     return {
       code: "EMAIL_REQUIRED",
       message: "Body malformed: email is required.",
-      status: "failure"
+      status: "error"
     };
   }
   // Check if password is passed.
@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
     return {
       code: "PASSWORD_REQUIRED",
       message: "Body malformed: password is required.",
-      status: "failure"
+      status: "error"
     };
   }
   try {
@@ -35,11 +35,12 @@ export default defineEventHandler(async (event) => {
       const isPasswordValid = await userData.verifyPasswordSync(password);
       if (isPasswordValid) {
         // Generate token or create session here
-
+        const token = userData.firstName +"-faketoken"; // Fake token
 
         return {
           id: userData._id,
           name: userData.firstName,
+          token: token,
           status: "success"
         };
       } else {
@@ -48,7 +49,7 @@ export default defineEventHandler(async (event) => {
         return {
           code: "USER_NOT_FOUND",
           message: "User with given email and password doesn't exists.",
-          status: "failure"
+          status: "error"
         };
       }
     } else {
@@ -57,7 +58,7 @@ export default defineEventHandler(async (event) => {
       return {
         code: "USER_NOT_FOUND",
         message: "User with given email and password doesn't exists.",
-        status: "failure"
+        status: "error"
       };
     }
   } catch (err) {
@@ -66,7 +67,7 @@ export default defineEventHandler(async (event) => {
     return {
       code: "ERROR",
       message: "Something wrong.",
-      status: "failure"
+      status: "error"
     };
   }
 });

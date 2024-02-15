@@ -15,56 +15,15 @@ const logout = () => {
   router.push('/login');
 };
 
-onMounted(() => {
-  //console.log("befor" + authenticated.value)
-  authenticated.value = getCookie("authenticated") == "true";
-  //console.log("after" + authenticated.value)
-})
-
-function getCookie(cname: string) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-// // Props
-// const props = defineProps({
-//     windowWidth: {
-//         type: Number,
-//         default: 640
-//     }
-// })
-
-// // Exports
-// const computedWindowWidth = computed(() => props.windowWidth)
-
+// Window width
 const myGlobalObject = useMyGlobalObject();
-
 const computedWindowWidth = computed(() => myGlobalObject.windowWidth.value);
-
-// watch(myGlobalObject.windowWidth, () => {
-//   console.log(myGlobalObject.windowWidth.value)
-//   console.log(computedWindowWidth.value)
-// })
-
 </script>
 
 <template>
   <!-- Navbar -->
   <nav
     class="blackwell-dark-bg-color flex-no-wrap relative flex w-full items-center justify-between bg-neutral-100 py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4">
-
-    <!-- Here add a container -->
     <div class="lg:container mx-auto flex w-full flex-wrap items-center justify-between px-3">
       <img src="~/assets/images/logo-white.png" class="w-[100px]" />
       <div class="flex flex-row items-center justify-center ml-10" v-if="computedWindowWidth.valueOf() >= 640">
@@ -105,11 +64,9 @@ const computedWindowWidth = computed(() => myGlobalObject.windowWidth.value);
           </ul>
         </div>
       </div>
-      <!-- <ul class="list-style-none ml-auto flex flex-col pr-0 lg:flex-row">
-
-      </ul> -->
     </div>
   </nav>
+  <!-- End NavBar-->
 </template>
 
 <style lang="scss" scoped >

@@ -1,4 +1,5 @@
 import { users } from "../../dbModels";
+
 interface IRequestBody {
   firstName: string;
   lastName: string;
@@ -31,7 +32,7 @@ export default defineEventHandler(async (event) => {
       return {
         code: "USER_EXISTS",
         message: "User with given email already exists.",
-        status: "failure",
+        status: "error",
       };
     } else {
       console.log("Create user");
@@ -49,7 +50,7 @@ export default defineEventHandler(async (event) => {
         id: newUserData._id,
         name: newUserData.firstName,
         email: newUserData.email,
-        status: "failure",
+        status: "error",
       };
     }
   } catch (err) {
@@ -58,7 +59,7 @@ export default defineEventHandler(async (event) => {
     return {
       code: "ERROR",
       message: "Something wrong.",
-      status: "failure"
+      status: "error"
     };
   }
 });
