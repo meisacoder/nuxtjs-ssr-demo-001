@@ -69,11 +69,11 @@ const computedWindowWidth = computed(() => myGlobalObject.windowWidth.value);
     </div>
   </div>
   <div class="blackwell-light-bg-color">
-    <div class="lg:container mx-auto flex w-full flex-wrap items-center justify-center px-3">
+    <!-- <div class="lg:container mx-auto flex w-full flex-wrap items-center justify-center px-3"> -->
       <div>
-        <Carousel class="w-[400px] h-[400px]" />
+        <CarouselArea class="w-[400px] h-[400px]" />
       </div>
-    </div>
+    <!-- </div> -->
   </div>
 </template>
 
