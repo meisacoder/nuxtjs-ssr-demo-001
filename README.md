@@ -9,9 +9,7 @@ npx nuxi build
 
 npm run dev
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Starts the development server on `http://localhost:3000`
 
 ## Production
 
@@ -22,8 +20,9 @@ npm run build
 
 ## mongoDB
 
-Create mongoDb
+Create mongoDb:
 
 # Create DB
 docker-compose up
+
 db.createUser({user: 'bwDbAdmin', pwd:"password", roles: [{role: "readWrite", db: "blackwell"}]})
