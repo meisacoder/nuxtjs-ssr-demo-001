@@ -70,9 +70,9 @@ const computedWindowWidth = computed(() => myGlobalObject.windowWidth.value);
   </div>
   <div class="blackwell-light-bg-color">
     <!-- <div class="lg:container mx-auto flex w-full flex-wrap items-center justify-center px-3"> -->
-      <div>
-        <CarouselArea class="w-[400px] h-[400px]" />
-      </div>
+    <div>
+      <CarouselArea class="w-[400px] h-[400px]" />
+    </div>
     <!-- </div> -->
   </div>
 </template>
@@ -84,5 +84,4 @@ const computedWindowWidth = computed(() => myGlobalObject.windowWidth.value);
 
 .step-bg-img {
   background-image: url("~/assets/images/easy_step_bg.png")
-}
-</style>
+}</style>
