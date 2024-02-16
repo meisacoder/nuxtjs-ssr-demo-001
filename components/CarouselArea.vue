@@ -4,17 +4,17 @@
       <!--  -->
       <Slide index="1">
         <div class="carousel__item">
-          <TradingGuideCarouselSlideItem :guide="1" description-text="" />
+          <TradingGuideCarouselSlideItem :guide="1" description-text="Forex For Beginners" />
         </div>
       </Slide>
       <Slide index="2">
         <div class="carousel__item">
-          <TradingGuideCarouselSlideItem :guide="2" description-text="" />
+          <TradingGuideCarouselSlideItem :guide="2" description-text="Analysing Made Easy" />
         </div>
       </Slide>
       <Slide index="3">
         <div class="carousel__item">
-          <TradingGuideCarouselSlideItem :guide="3" description-text="" />
+          <TradingGuideCarouselSlideItem :guide="3" description-text="CFDs Starter Kit" />
         </div>
       </Slide>
       <template #addons>

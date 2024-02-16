@@ -1,7 +1,8 @@
 <template>
-  <div class="bg-cover flex flex-row items-center w-[420px] h-[260px]"
+  <div class="bg-cover flex flex-col items-center w-[420px] h-[260px]"
     :id=guideBgId.toString()> <!-- sm:w-[113px] sm:h-[91px] md:w-[226px] md:h-[182px] xl:w-[340px] xl:h-[273px] -->
-    <div class="text-white pt-[100px] sm:text-sm">{{ props.descriptionText }}</div> 
+    <div class="flex-grow w-full"></div>
+    <div class="text-white sm:text-sm md:text-lg blackwell-orange-bg bg-opacity-50 w-full">{{ props.descriptionText }}</div> 
     <!--  w-[420px] h-[260px] sm:w-[140px] sm:h-[86px] md:w-[240px] md:h-[172px] xl:w-[420px] xl:h-[260px] -->
   </div>
 </template>
