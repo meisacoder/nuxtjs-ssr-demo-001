@@ -5,8 +5,12 @@ const computedWindowWidth = computed(() => myGlobalObject.windowWidth.value);
 
 <template>
   <div class="blackwell-dark-bg-color">
-    <div class="lg:container mx-auto flex w-full flex-wrap items-center justify-between px-3">
+    <div class="lg:container mx-auto flex w-full flex-wrap items-center justify-center px-3">
       <div v-if="computedWindowWidth.valueOf() < 640">
+        <div class="text-center text-white flex flex-col items-center justify-between">
+          <p>PROMOTION</p>
+          <p>ENDS IN</p>
+        </div>
         <CountDownTimer last-day="December 30, 2024 23:59:59" />
       </div>
     </div>
